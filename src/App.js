@@ -8,8 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     const words = require('./words.json');
-    var trie = new Trie(words);
-    this.state = {trie: trie.getTrie()};
+    const trie = new Trie(words);
+    this.state = {trie: trie};
   }
 
   render() {
