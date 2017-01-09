@@ -1,4 +1,5 @@
 import React from 'react';
+//import Results from './Results.js'
 
 
 class Searchbox extends React.Component {
@@ -16,6 +17,11 @@ class Searchbox extends React.Component {
 
   findAllMatchingFromTrie(word) {
     var word_a = word.split("");
+
+    if(word_a.length === 0) {
+      return [];
+    }
+
     word_a[0] = word_a[0].toUpperCase();
     var current = this.state.trie;
     for (var i = 0; i < word_a.length; ++i) {
@@ -41,7 +47,7 @@ class Searchbox extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="search">
         <input type="text" value={this.state.value} onChange={this.handleChange} />
         <ul>
           {this.state.results.map(function(listValue){
