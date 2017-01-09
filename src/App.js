@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Searchbox from './Searchbox.js'
+import Searchbox from './Searchbox.js';
+import Trie from './Trie.js';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     const words = require('./words.json');
-    const trie = makeTrie(words);
-    this.state = {trie: trie};
+    var trie = new Trie(words);
+    this.state = {trie: trie.getTrie()};
   }
 
   render() {
@@ -28,27 +29,3 @@ class App extends Component {
 }
 
 export default App;
-
-function makeTrie(words) {
-  var root = {};
-
-  for (var i = 0; i < words.length; ++i) {
-
-    var word = words[i];
-    var current = root;
-    var word_splitted = word.split(" ");
-    var rest = word_splitted[1];
-
-    var rest_a = rest.split("");
-
-    for (var j = 0; j < rest_a.length; ++j) {
-      var character = rest_a[j];
-      if (current[character] === undefined) {
-        current[character] = {};
-      }
-      current = current[character];
-    }
-    current["$"] = word;
-  }
-  return root;
-}
