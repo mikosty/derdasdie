@@ -21,7 +21,9 @@ class App extends Component {
         <p className="App-intro">
           Resolve the gender of a German word
         </p>
-        <Searchbox trie={this.state.trie}/>
+        <div className="Search">
+          <Searchbox trie={this.state.trie}/>
+        </div>
       </div>
 
     );
