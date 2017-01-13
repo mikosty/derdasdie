@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Der Die Das</h2>
+          <h2>Der Das Die</h2>
         </div>
         <p className="App-intro">
           Resolve the gender of a German word
