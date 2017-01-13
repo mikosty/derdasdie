@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/mikosty/derdasdie.svg?branch=master)](https://travis-ci.org/mikosty/derdasdie)
+
+https://mikosty.github.io/derdasdie/
+
 Resolve the gender of a german noun.
 
 Made with React create app -bootstrapper.
