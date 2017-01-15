@@ -22,7 +22,7 @@ class Searchbox extends React.Component {
   render() {
     return (
       <div className="search">
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <input type="text" autoFocus="autofocus" value={this.state.value} onChange={this.handleChange} />
         <div className="results">
 
         <Results results={this.state.results} />
